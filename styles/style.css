@@ -63,6 +63,7 @@
   font-family: var(--font-Inter);
   font-size: 18px;
   font-weight: 700;
+  font-variation-settings: "wght" 700;
   line-height: 100%;
   padding: 4px 10px;
 }
@@ -74,6 +75,7 @@
 .card__text {
   font-family: var(--font-Inter);
   font-weight: 400;
+  font-variation-settings: "wght" 400;
   font-size: 18px;
   line-height: 21px;
   padding-bottom: 25px;
@@ -98,6 +100,7 @@
 .card__like-button:focus {
   outline: none;
 }
+
 .card__like-button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color, #000);
 }
@@ -113,6 +116,7 @@
   z-index: 0;
   pointer-events: none;
 }
+
 .card__like-button:hover::before {
   transform: scaleX(1);
 }
@@ -169,6 +173,14 @@
     0 -1px 0 white,
     0 -1px 0 white;
   opacity: 0.6;
+}
+
+@supports ((-webkit-text-stroke: 1px white) or (text-stroke: 1px white)) {
+  .img__icon,
+  .img__icon_corrected {
+    -webkit-text-stroke: 1px white;
+    text-shadow: none;
+  }
 }
 
 .card__icon-button {
