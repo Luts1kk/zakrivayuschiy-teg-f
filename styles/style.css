@@ -17,6 +17,7 @@
   background-attachment: fixed;
   background-size: cover;
   min-width: 375px;
+  overflow-x: hidden;
 }
 
 .container__block {
@@ -64,7 +65,8 @@
 .card__title {
   font-family: var(--font-card);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 715;
+  font-variation-settings: "wght" 715;
   padding: 4px 10px;
 }
 
@@ -86,7 +88,8 @@
 
 .card__text {
   font-family: var(--font-card);
-  font-weight: 400;
+  font-weight: 410;
+  font-variation-settings: "wght" 410;
   font-size: 18px;
   line-height: 21px;
   padding-bottom: 25px;
@@ -108,6 +111,7 @@
   justify-self: center;
   position: relative;
   overflow: hidden;
+  transition: 0.5s ease-in-out;
 }
 
 .button__text {
@@ -115,6 +119,10 @@
   font-weight: 400;
   font-family: var(--font-title);
   line-height: 90%;
+  position: relative;
+  z-index: 1;
+  color: var(--button-text-color, #fff);
+  mix-blend-mode: difference;
 }
 
 .button:focus {
@@ -144,13 +152,6 @@
 
 .button:hover::before {
   transform: scaleX(1);
-}
-
-.button .button__text  {
-  position: relative;
-  z-index: 1;
-  color: var(--button-text-color, #fff);
-  mix-blend-mode: difference;
 }
 
 .img__icon {
@@ -208,7 +209,7 @@
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
-  filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
 }
 
 .popup {
@@ -231,6 +232,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .popup::backdrop {
@@ -248,15 +250,16 @@
 }
 
 .popup__img {
-  width: 39px;
+  height: 39px;
 }
 
 .popup__text {
   text-transform: uppercase;
   max-width: 234px;
+  line-height: 150%;
 }
 
-@media (width <= 375px) {
+@media (width <= 376px) {
   .footer__button {
     flex-direction: column;
     gap: 8px;
@@ -266,17 +269,13 @@
 
   .button__img {
     width: 28px;
+    margin-right: 0;
   }
 
   .header {
     padding: 122px 16px;
-    max-height: 327px;
-    gap: 20px;
   }
 
-  .content__section .section__button {
-    min-width: 375px;
-  }
 }
 
 .filter__grayscale {
